@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { getComputerChoice } from './utils.js';
+import { getComputerChoice, declareWinner } from './utils.js';
 const playButton = document.getElementById('play-button');
 const resultEl = document.getElementById('result');
 const computerChoiceEl = document.getElementById('computer-choice');
@@ -23,6 +23,7 @@ playButton.addEventListener('click', () => {
     totalGames++;
 
     let randomNum = Math.floor(Math.random() * 3);
+    // console.log(randomNum);
 
     let computerChoice = getComputerChoice(randomNum);
 
@@ -31,39 +32,18 @@ playButton.addEventListener('click', () => {
     let userChoice = currentlySelectedButton.value;
 
     console.log(userChoice, computerChoice);
-    function declareWinner(userChoice, computerChoice) {
 
-        if (userChoice === computerChoice) {
-            totalDraws++;
-            resultEl.textContent = 'Tie';
-        } else if (userChoice === 'rock') {
-            if (computerChoice === 'paper') {
-                resultEl.textContent = 'You lose!';
-            } else {
-                totalWins++;
-                resultEl.textContent = 'You win!';
-            }
-        } else if (userChoice === 'paper') {
-            if (computerChoice === 'scissors') {
-                resultEl.textContent = 'You lose!';
-            } else {
-                totalWins++;
-                resultEl.textContent = 'You win!';
-            }
-        } else if (userChoice === 'scissors') {
-            if (computerChoice === 'rock') {
-                resultEl.textContent = 'You lose!';
-            } else {
-                totalWins++;
-                resultEl.textContent = 'You win!';
-            }
-        }
+    const winner = declareWinner(userChoice, computerChoice);
+
+    if (winner === 'You Win!') {
+        totalWins++;
+        resultEl.textContent = winner;
+    } else if (winner === 'Draw') {
+        totalDraws++;
+        resultEl.textContent = winner;
+    } else {
+        resultEl.textContent = winner;
     }
-
-
-
-    declareWinner(userChoice, computerChoice);
-
 
 
 
