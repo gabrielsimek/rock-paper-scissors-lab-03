@@ -111,3 +111,7 @@ footer {
     }
 
   }
+
+  input:checked {
+      color: pink;
+  };
