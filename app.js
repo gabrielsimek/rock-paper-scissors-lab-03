@@ -53,7 +53,7 @@ playButton.addEventListener('click', () => {
     totalDrawsEl.textContent = totalDraws;
     totalWinsEl.textContent = totalWins;
     totalGamesEl.textContent = totalGames;
-    computerChoiceEl.textContent = computerChoice;
+    computerChoiceEl.src = `./assets/${computerChoice}.jpg`;
     totalLossesEl.textContent = totalGames - totalDraws - totalWins;
 
 

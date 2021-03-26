@@ -111,14 +111,22 @@ footer {
     }
 
   }
+  input {
+      display: none;
+  }
 
-  /* input:checked {
-      color: pink;
-  }; */
-
+ input:checked + img {
+     box-shadow: 2px 2px 10px 2px blue;
+ }
 
 .hidden {
     display: none;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
 }
 
 .results {
