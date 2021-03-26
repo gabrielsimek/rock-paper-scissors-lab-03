@@ -120,3 +120,11 @@ footer {
 .hidden {
     display: none;
 }
+
+.results {
+    font-size: xx-large;
+}
+
+#computer-choice {
+    font-size: x-large;
+}
