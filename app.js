@@ -7,18 +7,21 @@ const totalGamesEl = document.getElementById('total-games');
 const totalWinsEl = document.getElementById('total-wins');
 const totalDrawsEl = document.getElementById('total-draws');
 const totalLossesEl = document.getElementById('total-losses');
+const totalMatchesEl = document.querySelector('#total-matches');
 const resetButton = document.querySelector('#reset-button');
-const hidden = document.querySelector('.hidden')
+const hidden = document.querySelector('.hidden');
 console.log(hidden);
 
 // initialize state
 let totalGames = 0;
 let totalWins = 0;
 let totalDraws = 0;
+let totalMatches = 0;
 
 
 
 // set event listeners to update state and DOM
+
 
 playButton.addEventListener('click', () => {
     totalGames++;
@@ -60,10 +63,13 @@ playButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {
+
+    totalMatches++;
+    totalMatchesEl.textContent = totalMatches;
     totalGames = 0;
     totalWins = 0;
     totalDraws = 0;
-
+    resultEl.textContent = ''
     totalDrawsEl.textContent = totalDraws;
     totalWinsEl.textContent = totalWins;
     totalGamesEl.textContent = totalGames;
@@ -72,3 +78,6 @@ resetButton.addEventListener('click', () => {
 
     hidden.classList.add('hidden')
 });
+
+
+
